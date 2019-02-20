@@ -1,0 +1,94 @@
+ <div class="container m-t-30">
+    <div class="col-lg-12">
+    <div class="col-lg-8">
+    <img src="/img/bg.png" class="img-responsive">
+    </div>
+    <div class="col-lg-4">
+    <div class="text-center">
+    <p class="title1">Join Viraagh</p>
+<p class="cstm-desc">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse.
+</p>
+<br>
+        {{#if redirect}}
+            <form action="/signup" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="text" name = "userName" class="form-control cstm-form-control1" placeholder="UserName" value = "{{{userName}}}" required>
+                <input type="password" name = "password" class="form-control cstm-form-control1" placeholder="Password" required>
+                <input type="text" name = "linkedinURL" class="form-control cstm-form-control1" placeholder="Linkedin URL" required>
+                <input type="submit" class="btn cstm-btn1" value="SIGN UP">
+            </form>
+            {{else}}
+            <form action="/signup" method="post" enctype="application/x-www-form-urlencoded">
+                <input type="text" name = "userName" class="form-control cstm-form-control1" placeholder="UserName" required>
+                <input type="password" name = "password" class="form-control cstm-form-control1" placeholder="Password" required>
+                <input type="text" name = "linkedinURL" class="form-control cstm-form-control1" placeholder="Linkedin URL" required>
+                <input type="submit" class="btn cstm-btn1" value="SIGN UP">
+            </form>
+            {{/if}}
+
+
+    </div>
+    </div>
+    </div>
+    </div>
+
+    <div class="container m-t-5p">
+    <div class="col-lg-12">
+    <p class="title1">Why Viraagh?</p>
+<div class="col-lg-6">
+    <p class="cstm-desc">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+</p>
+<a href="http://www.google.com" target="_blank">Sample Google Link</a>
+<p class="cstm-desc">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+</p>
+
+<div class="m-t-5p">
+    <br><br>
+    <p class="title1">Sign Up</p>
+<p class="cstm-desc">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+</p>
+<a href="http://www.google.com" target="_blank">Sample Google Link</a>
+<p class="cstm-desc">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+</p>
+</div>
+
+<div class="m-t-5p">
+    <br><br>
+    <p class="title1">Mobile</p>
+    <p class="cstm-desc">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+</p>
+<a href="http://www.google.com" target="_blank">Sample Google Link</a>
+<p class="cstm-desc">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo.
+</p>
+</div>
+</div>
+<div class="col-lg-offset-2 col-lg-4">
+    <video width="100%" height="240" controls>
+<source src="img/video.mp4" type="video/mp4">
+    <!-- <source src="movie.ogg" type="video/ogg"> -->
+    Your browser does not support the video tag.
+</video>
+</div>
+</div>
+</div>

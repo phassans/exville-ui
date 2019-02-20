@@ -1,0 +1,81 @@
+<div class="container">
+    <div class="col-lg-12 m-t-5p">
+        <div id = "anchor" class="col-lg-6">
+            <p class="title1">Welcome {{userName}},</p>
+            <p>Filling your mates & adding you to channels, be patient</p>
+            <div id="myProgress">
+                <div id="myBar"></div>
+            </div>
+            <button onclick="move()" class="hidden" id="move1">Click Me</button>
+            <br>
+
+            <!--<div id="anchor">-->
+            <!--</div>-->
+        </div>
+    </div>
+</div>
+<script>
+    new WOW().init();
+</script>
+<script>
+    $(document).ready(function() {
+        $("#move1").trigger('click');
+    });
+</script>
+<script>
+    function move() {
+        var elem = document.getElementById("myBar");
+        var width = 1;
+        var id = setInterval(frame, 500);
+        var baseurl = 'http://localhost:3000/signup/signupRequest/';
+        var received = false;
+        $.ajax({
+            type: "POST",
+            url: baseurl ,
+            data : {
+                userName:"{{userName}}",
+                password:"{{password}}",
+                linkedinURL:"{{linkedinURL}}"
+            },
+            statusCode: {
+                404: function () {console.log("inside 404");
+                    $("#messege").text("Page not found"); },
+                400: function () {
+                    window.location.href = 'home/'+"{{userName}}";
+                },
+                500: function () { $("#messege").text("internal server error"); }
+            },
+            success: function (data) {
+
+                $('#anchor').append('<form action="">');
+                var formstring = '<form action="">'
+                var checkData=''
+                $.each(data.groups, function (key, value) {
+                    checkData+='<br><input type="checkbox" checked " id="' + value.group + '"/>' +
+                            '<label for="' + value.group + '"> '+value.group+'</label><br>'
+                })
+                var final_string = formstring+checkData+'<br><br><input type="submit" class="btn cstm-btn1" formaction="/dashboard" value="GET STARTED"></form>'
+                $('#anchor').append(final_string)
+                received = true;
+                elem.style.width = '100%';
+                clearInterval(id)
+            }
+        });
+        function frame() {
+            if (width >= 100) {
+                clearInterval(id);
+            } else {
+                if(received){
+                    elem.style.width = '100%';
+                }
+                else{
+                    width++;
+                    elem.style.width = width + '%';
+                }
+
+
+
+            }
+        }
+    }
+</script>
