@@ -1,0 +1,34 @@
+<div class="col-lg-4 col-xs-6">
+    <button class = "navbar-toggle" data-toggle="collapse" data-target = ".navHeaderCollapse" >
+    <i class="fa fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse navHeaderCollapse">
+    <ul class="nav navbar-nav navbar-right">
+    <li><a href="#">Why Virragh</a></li>
+<li><a href="#">Sign Up</a></li>
+<li><a href="#">Mobile</a></li>
+</ul>
+</div>
+</div>
+<div class="visible-xs">
+    <br>
+    </div>
+    <div class="col-lg-offset-1 col-lg-5 text-center-xs">
+    <form action="/login" enctype="application/x-www-form-urlencoded" method="post" class="cstm-form">
+        <input type="text" name = "userName" class="form-control cstm-form-control" placeholder="Username" required>
+
+        {{#if error}}
+            <input type="password" name = "password" class="form-control cstm-form-control" placeholder="Password" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" required>
+        {{else}}
+            <input type="password" name = "password" class="form-control cstm-form-control" placeholder="Password" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" required>
+        {{/if}}
+    <input type="submit" value="LOGIN" class="btn cstm-btn1">
+    </form>
+    </div>
+{{#if error}}
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="popover"]').popover();
+        });
+    </script>
+{{/if}}

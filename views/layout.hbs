@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>VIRRAGH</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+    <link rel="stylesheet" href="/css/hover.css"/>
+    <link rel="stylesheet" href="/css/animate.css"/>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/font-awesome-animation.min.css"/>
+    <link rel="stylesheet" href="/css/owl.carousel.css"/>
+    <link rel="stylesheet" href="/css/owl.theme.default.min.css"/>
+    <link rel="stylesheet" href="/css/style.css"/>
+    <link rel="icon" href="/img/favicon.png"/>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Montserrat:300,400,500,600,700,800,900" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script type="text/javascript" src="/js/bootstrap.min.js"></script>
+    <!--<script type='text/javascript' src='/js/handlebars-v4.0.5.js'></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <!--<script type="text/javascript" src="/js/owl.carousel.js"></script>-->
+
+</head>
+<body>
+
+{{#if error}}
+    {{> messages/errorMessage}}
+{{/if}}
+{{#if success}}
+    {{>messages/successMessage}}
+{{/if}}
+<div class="col-lg-12 col-xs-12 cstm-center cstm-header">
+    <div class="col-lg-2 col-xs-6">
+        <div class="cstm-logo">
+            <p>VIRRAGH</p>
+            <small>Where everyday a reunion</small>
+        </div>
+    </div>
+    {{#if home}}
+        {{> homePage/topBar}}
+    {{/if}}
+    {{#unless home}}
+        {{> loadingBarPage/header}}
+    {{/unless}}
+</div>
+<div class="clearfix"></div>
+
+<!--LoginHeader-->
+    {{{body}}}
+
+<div class="footer">
+    <div class="text-center">
+        <a href="#">Company</a>|
+        <a href="#">About Us</a>|
+        <a href="#">Contact Us</a>|
+        <a href="#">Blog</a>|
+        <a href="#">Privacy & Terms</a>
+    </div>
+    <p>Viraagh &copy; 2018.</p>
+</div>
+</body>
+</html>
