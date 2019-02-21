@@ -1,6 +1,6 @@
 var config =
 {
-  "dirname":"/Users/ananyagoel/Desktop/fiverr/redotask/hbapp",
+  "dirname":"/Users/ananyagoel/Desktop/pramodsubmit/exville-ui",
 
 }
 

@@ -18,6 +18,18 @@ body{
 	.cstm-btn1{
 		padding: 6px 25px;
 	}
+	.popover-content{
+		background: #F5AFAF;
+	}
+	.popover-content, .popover-content .body {
+		width: 100%;
+		overflow: visible;
+		text-overflow: ellipsis;
+	}
+	.popover-content {
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 }
 @media (max-width: 800px) {
 	.cstm-form{
