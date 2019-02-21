@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-let   helpers = require('./helpers/helper');
+let helpers = require('./helpers/helper');
 
 var indexRouter = require('./routes/index');
 var loginRouter = require('./routes/login');
@@ -29,7 +29,9 @@ app.set('view engine', 'hbs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+app.use(express.urlencoded({
+  extended: true
+}));
 // app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser('secret_key_viraagh'));
 app.use(express.static(path.join(__dirname, 'public')));
@@ -39,7 +41,7 @@ app.use('/login', loginRouter);
 app.use('/dashboard', dashboardRouter);
 app.use('/toggle', toggleRouter);
 app.use('/upload', uploadRouter);
-app.use('/delete', deleteRouter );
+app.use('/delete', deleteRouter);
 app.use('/signup', singupRouter);
 app.use('/refresh', refreshRouter);
 

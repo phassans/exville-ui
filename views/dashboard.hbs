@@ -1,115 +1,115 @@
-
 <div class="container">
-    <div class="col-lg-12 m-t-5p nav nav-tabs">
-        <ul class="nav nav-tabs" role="tablist">
-            <li class="nav-item active">
-                <a class="nav-link cstm-btn1" data-toggle="tab" href="#menu1" role="tab" aria-controls="home" aria-selected="true">Access Viraagh</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link cstm-btn1" data-toggle="tab" href="#menu2" role="tab" aria-controls="profile" aria-selected="false">Your Channels</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link cstm-btn1" data-toggle="tab" href="#menu3" role="tab" aria-controls="contact" aria-selected="false">Profile</a>
-            </li>
-        </ul>
+  <div class="col-lg-12 m-t-5p nav nav-tabs">
+    <ul class="nav nav-tabs" role="tablist">
+      <li class="nav-item active">
+        <a class="nav-link cstm-btn1" data-toggle="tab" href="#menu1" role="tab" aria-controls="home" aria-selected="true">Access Viraagh</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link cstm-btn1" data-toggle="tab" href="#menu2" role="tab" aria-controls="profile" aria-selected="false">Your Channels</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link cstm-btn1" data-toggle="tab" href="#menu3" role="tab" aria-controls="contact" aria-selected="false">Profile</a>
+      </li>
+    </ul>
+  </div>
+  <div class="clearfix"></div>
+
+  <br><br>
+  <div class="tab-content">
+    <div id="menu1" class="tab-pane fade in active col-lg-12">
+      <p><strong>WEB</strong>&nbsp;&nbsp;<a href="#" class="btn cstm-btn1">Click Here</a></p>
+      <br>
+      <p><strong><i class="fa fa-angle-right"></i>&nbsp;Download the mobile content.</strong></p>
+      <div class="col-lg-12 p-0">
+        <div class="col-lg-2 p-0">
+          <a href="#"><img src="/img/android.png" class="img-responsive"></a>
+        </div>
+        <div class="col-lg-2 p-0">
+          <a href="#"><img src="/img/appstore.png" class="img-responsive"></a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+      <p><strong><i class="fa fa-angle-right"></i>&nbsp;
+          Open the application and enter the URL - <a href="http://chat.viraagh.com">http://chat.viraagh.com</a>
+        </strong></p>
+
     </div>
     <div class="clearfix"></div>
-
-    <br><br>
-    <div class="tab-content">
-        <div id="menu1" class="tab-pane fade in active col-lg-12">
-            <p><strong>WEB</strong>&nbsp;&nbsp;<a href="#" class="btn cstm-btn1">Click Here</a></p>
+    <div id="menu2" class="tab-pane fade in col-lg-12">
+      <form action="">
+        {{#each data}}
+          {{#if this.status}}
             <br>
-            <p><strong><i class="fa fa-angle-right"></i>&nbsp;Download the mobile content.</strong></p>
-            <div class="col-lg-12 p-0">
-                <div class="col-lg-2 p-0">
-                    <a href="#"><img src="/img/android.png" class="img-responsive"></a>
-                </div>
-                <div class="col-lg-2 p-0">
-                    <a href="#"><img src="/img/appstore.png" class="img-responsive"></a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-            <p><strong><i class="fa fa-angle-right"></i>&nbsp;
-                Open the application and enter the URL - <a href="http://chat.viraagh.com">http://chat.viraagh.com</a>
-            </strong></p>
+            <input type="checkbox" id={{group}} checked onclick="task(event)">
+            <label for={{group}}>{{group}}</label>
+            <br>
+          {{else}}
+            <br>
+            <input type=checkbox id={{group}}>
+            <label for={{group}}>{{group}}</label>
+            <br>
+          {{/if}}
+        {{/each}}
+        <br>
+        <input type="refresh" class="btn cstm-btn1" value="SAVE">
+        <input type="submit" formaction="/refresh" formmethod="get" class="btn cstm-btn1" value="REFRESH">
+      </form>
 
-        </div>
-        <div class="clearfix"></div>
-        <div id="menu2" class="tab-pane fade in col-lg-12">
-            <form action="">
-                    {{#each data}}
-                        {{#if this.status}}
-                            <br>
-                            <input type="checkbox" id={{group}} checked onclick="task(event)">
-                            <label for={{group}}>{{group}}</label>
-                            <br>
-                        {{else}}
-                            <br>
-                            <input type=checkbox id={{group}}>
-                            <label for={{group}}>{{group}}</label>
-                            <br>
-                        {{/if}}
-                    {{/each}}
-                <br>
-                <input type="refresh" class="btn cstm-btn1" value="SAVE">
-                <input type="submit" formaction="/refresh" formmethod="get" class="btn cstm-btn1" value="REFRESH">
-            </form>
-
-        </div>
-        <div class="clearfix"></div>
-        <div id="menu3" class="tab-pane fade in col-lg-12">
-            <div class="col-lg-12">
-                <div class="col-lg-4">
-                    <form action="/upload" enctype="multipart/form-data" name ="upload" method="post">
-                        <label class="custom-file-upload" >
-                            <input type="file" name="images" class="w-100" accept=".jpg, .jpeg, .png" onchange="this.form.submit()">
-                            <i class="fa fa-upload"></i>&nbsp;Image
-                        </label>
-                    </form>
-                    <form action ="/dashboard/resetPassword" method="post" enctype="application/x-www-form-urlencoded">
-                        <input type="text" name="newPassword" class="form-control cstm-form-control1" placeholder="Change Password">
-                        <input type="submit" class="btn cstm-btn1" value="Update Password">
-                    </form>
-                    <br><br><br><br>
-                    <a href="delete" onclick="return confirm('Are you sure?')" class="btn cstm-btn1">Delete Account</a>
-                </div>
-            </div>
-            <div class="clearfix"></div>
-
-        </div>
-        <div class="clearfix"></div>
     </div>
+    <div class="clearfix"></div>
+    <div id="menu3" class="tab-pane fade in col-lg-12">
+      <div class="col-lg-12">
+        <div class="col-lg-4">
+          <form action="/upload" enctype="multipart/form-data" name="upload" method="post">
+            <label class="custom-file-upload">
+              <input type="file" name="images" class="w-100" accept=".jpg, .jpeg, .png" onchange="this.form.submit()">
+              <i class="fa fa-upload"></i>&nbsp;Image
+            </label>
+          </form>
+          <form action="/dashboard/resetPassword" method="post" enctype="application/x-www-form-urlencoded">
+            <input type="text" name="newPassword" class="form-control cstm-form-control1" placeholder="Change Password">
+            <input type="submit" class="btn cstm-btn1" value="Update Password">
+          </form>
+          <br><br><br><br>
+          <a href="delete" onclick="return confirm('Are you sure?')" class="btn cstm-btn1">Delete Account</a>
+        </div>
+      </div>
+      <div class="clearfix"></div>
+
+    </div>
+    <div class="clearfix"></div>
+  </div>
 </div>
 <script>
-    function task(e) {
-        var status;
-        if(e.target.checked)
-        {
-        status=true
-        }
-        else
-        {
-            status=false
-        }
-        $.ajax({
-            type: "POST",
-            url: 'http://localhost:3000/toggle/' ,
-            data : {
-                group:e.target.id,
-                status: status
-            },
-            statusCode: {
-                404: function () {console.log("inside 404");
-                    $("#messege").text("Page not found"); },
-                400: function () {
-                    window.location.href = 'home/'+"{{userName}}";
-                },
-                500: function () { $("#messege").text("internal server error"); }
-            },
-            success: function (data) {
-
-            }
-        });
+  function task(e) {
+    var status;
+    if (e.target.checked) {
+      status = true
+    } else {
+      status = false
     }
+    $.ajax({
+      type: "POST",
+      url: 'http://localhost:3000/toggle/',
+      data: {
+        group: e.target.id,
+        status: status
+      },
+      statusCode: {
+        404: function() {
+          console.log("inside 404");
+          $("#messege").text("Page not found");
+        },
+        400: function() {
+          window.location.href = 'home/' + "{{userName}}";
+        },
+        500: function() {
+          $("#messege").text("internal server error");
+        }
+      },
+      success: function(data) {
+
+      }
+    });
+  }
 </script>
