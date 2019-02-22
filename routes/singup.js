@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let request = require('request');
+let config = require('./config');
 
 /*
     @Signup
@@ -26,7 +27,7 @@ router.post('/', function(req, res) {
 router.post('/signupRequest', function(req, res) {
   let options = {
     method: 'POST',
-    url: 'http://18.218.39.184:8080/v1/signup',
+    url: config.baseURL+'signup',
     headers: {
       'cache-control': 'no-cache'
     },
@@ -38,6 +39,8 @@ router.post('/signupRequest', function(req, res) {
     json: true
   };
 
+  console.log('Yahoo 1111');
+  console.log(config.baseURL+'usergroups');
   request(options, function(error, response, body) {
     if (error) res.render('home', {
       layout: 'layout',
@@ -49,7 +52,7 @@ router.post('/signupRequest', function(req, res) {
       //fetch groups
       let groupsRequest = {
         method: 'POST',
-        url: 'http://18.218.39.184:8080/v1/usergroups',
+        url: config.baseURL+'usergroups',
         headers: {
           'cache-control': 'no-cache',
           'Content-Type': 'application/json'

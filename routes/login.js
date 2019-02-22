@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let request = require('request');
+let config = require('./config');
 
 /*
     @Login
@@ -10,7 +11,7 @@ let request = require('request');
 router.post('/', function(req, res) {
   let options = {
     method: 'POST',
-    url: 'http://18.218.39.184:8080/v1/login',
+    url: config.baseURL+'login',
     headers: {
       'cache-control': 'no-cache'
     },

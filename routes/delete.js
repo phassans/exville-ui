@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let request = require('request');
+let config = require('./config');
 
 /*
     @Delete account
@@ -12,7 +13,7 @@ router.get('/', function(req, res) {
   if (req.signedCookies['userId']) {
     var groupsRequest = {
       method: 'POST',
-      url: 'http://18.218.39.184:8080/v1/delete',
+      url: config.baseURL+'delete',
       headers: {
         'cache-control': 'no-cache',
         'Content-Type': 'application/json'

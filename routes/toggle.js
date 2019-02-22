@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let request = require('request');
+let config = require('./config');
 
 /*
     @Toggle
@@ -9,10 +10,11 @@ let request = require('request');
  */
 router.post('/', function(req, res) {
   //cookie check
+  console.log(config.baseURL+'usergroup/toggle');
   if (req.signedCookies['userId']) {
     var groupsRequest = {
       method: 'POST',
-      url: 'http://18.218.39.184:8080/v1/usergroup/toggle',
+      url: config.baseURL+'usergroup/toggle',
       headers: {
         'cache-control': 'no-cache',
         'Content-Type': 'application/json'

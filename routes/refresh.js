@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let request = require('request');
+let config = require('./config');
 
 /*
     @Refresh
@@ -35,7 +36,7 @@ router.get('/', function(req, res) {
 router.post('/refreshRequest', function(req, res) {
   let options = {
     method: 'POST',
-    url: 'http://18.218.39.184:8080/v1/refresh',
+    url: config.baseURL+'refresh',
     headers: {
       'cache-control': 'no-cache'
     },
@@ -52,7 +53,7 @@ router.post('/refreshRequest', function(req, res) {
       //fetch groups
       var groupsRequest = {
         method: 'POST',
-        url: 'http://18.218.39.184:8080/v1/usergroups',
+        url: config.baseURL+'usergroups',
         headers: {
           'cache-control': 'no-cache',
           'Content-Type': 'application/json'

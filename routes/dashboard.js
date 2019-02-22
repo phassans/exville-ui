@@ -1,6 +1,7 @@
 let express = require('express');
 let router = express.Router();
 let request = require('request');
+let config = require('./config');
 
 /*
     @dashboard
@@ -12,7 +13,7 @@ router.get('/', function(req, res) {
   if (req.signedCookies['userId']) {
     var groupsRequest = {
       method: 'POST',
-      url: 'http://18.218.39.184:8080/v1/usergroups',
+      url: config.baseURL+'usergroups',
       headers: {
         'cache-control': 'no-cache',
         'Content-Type': 'application/json'
@@ -83,7 +84,7 @@ router.post('/resetPassword', function(req, res) {
   if (req.signedCookies['userId']) {
     var groupsRequest = {
       method: 'POST',
-      url: 'http://18.218.39.184:8080/v1/changepwd',
+      url: config.baseURL+'changepwd',
       headers: {
         'cache-control': 'no-cache',
         'Content-Type': 'application/json'
