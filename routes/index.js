@@ -11,12 +11,22 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   //clear cookies if any present
   res.clearCookie("userId");
-  //home Page
-  res.render('home', {
-    layout: 'layout',
-    home: true,
-    redirect: false
-  });
+  if(req.query.source==='login'){
+          res.render('home', {
+              layout: 'layout',
+              loginError: true,
+              errorMessage: "Email/Password combination is not valid",
+              redirect: false,
+              home:true
+          });
+  }
+  else{
+      res.render('home', {
+          layout: 'layout',
+          home: true,
+          redirect:false
+      });
+  }
 });
 
 

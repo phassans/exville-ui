@@ -26,13 +26,7 @@ router.post('/', function(req, res) {
       layout: 'layout'
     });
     if (response.statusCode !== 200) {
-      res.render('home', {
-        layout: 'layout',
-        home: true,
-        redirect: false,
-        error: true,
-        errorMessage: "Wrong credentials"
-      });
+      res.redirect('/?source=login')
 
     } else {
       //set encrypted cookie

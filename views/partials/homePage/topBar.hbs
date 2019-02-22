@@ -16,18 +16,22 @@
 <div class="col-lg-offset-1 col-lg-5 text-center-xs">
   <form action="/login" enctype="application/x-www-form-urlencoded" method="post" class="cstm-form">
     <input type="text" name="userName" class="form-control cstm-form-control" placeholder="Username" required>
-    {{#if error}}
-      <input type="password" name="password" class="form-control cstm-form-control" placeholder="Password" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" required>
+    {{#if loginError}}
+      <input type="password" name="password" class="form-control cstm-form-control" placeholder="Password" data-container="body" data-toggle="popover" data-content="{{errorMessage}}" data-placement= "bottom" required>
+        <!--<span class="error-message">Please try again.</span>-->
     {{else}}
-      <input type="password" name="password" class="form-control cstm-form-control" placeholder="Password" data-toggle="popover" title="Popover Header" data-content="Some content inside the popover" required>
+      <input type="password" name="password" class="form-control cstm-form-control" placeholder="Password" required>
     {{/if}}
     <input type="submit" value="LOGIN" class="btn cstm-btn1">
   </form>
 </div>
-{{#if error}}
-  <script>
-    $(document).ready(function() {
-      $('[data-toggle="popover"]').popover();
-    });
-  </script>
+
+{{#if loginError}}
+    <script>
+        $(document).ready(function(){
+            // $('[data-toggle="popover"]').popover({container: 'body'})
+            $('[data-toggle="popover"]').popover('show')
+        });
+
+    </script>
 {{/if}}

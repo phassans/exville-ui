@@ -15,8 +15,6 @@ var singupRouter = require('./routes/singup');
 var refreshRouter = require('./routes/refresh');
 
 var app = express();
-const fileUpload = require('express-fileupload');
-app.use(fileUpload());
 
 // view engine setup
 let config = require('./config');
